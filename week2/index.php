@@ -41,6 +41,18 @@
     ?>
     <p> My Full Name is: <?php echo $fName." ".$lName ?>
     
+    <!-- Array -->
+     <?php
+     $person['frist']= "Srivignesh";
+     $person['last'] = "Kavle";
+     $person['email'] = "n01696452@humber.ca";
+     $person['web'] = "https://google.com";
+     ?>
+
+     <p>My First Name is: <?php echo $person['frist'] ?></p>
+     <p>My Last Name is: <?php echo $person['last'] ?></p>
+     <p>My Email Id is: <a href="mailto:<?php echo $person['email'] ?>" target="_blank"><?php echo $person['email'] ?></a></p>
+     <p>My Web is:<a href=" <?php echo $person['web'] ?>" target="_blank"> <?php echo $person['web'] ?></a></p>
 
   </body>
 </html>
