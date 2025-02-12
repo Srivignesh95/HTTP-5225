@@ -27,6 +27,7 @@
                                 . $users[$i]['address']['street'] . ",<br>" 
                                 . $users[$i]['address']['city'] . ", " 
                                 . $users[$i]['address']['zipcode'] . "<br>";
+        echo "Map: <iframe src='https://maps.google.com/maps?q=" . $users[$i]['address']['geo']['lat'] . "," . $users[$i]['address']['geo']['lng'] . "&t=&z=15&ie=UTF8&iwloc=&output=embed'></iframe>";
         echo "<hr>";
     }
     ?>
