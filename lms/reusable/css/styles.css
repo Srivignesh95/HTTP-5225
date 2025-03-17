@@ -1,0 +1,10 @@
+#main_content{
+    padding: 50px;
+    background-color: whitesmoke;
+}
+#side_bar{
+    background-color: whitesmoke;
+    padding: 50px;
+    width: 300px;
+    height: 450px;
+}
