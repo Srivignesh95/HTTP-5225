@@ -2,7 +2,7 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-$baseURL = "http://localhost/HTTP-5225/Assignmnent-2";
+$baseURL = "https://meritmentors.in/lms";
 ?>
 
 
