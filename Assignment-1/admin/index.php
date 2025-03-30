@@ -1,12 +1,9 @@
 <?php
-require './../includes/header.php';
-require './../includes/conn.php';
+require '../includes/header.php';
+require '../includes/conn.php';
 require("functions.php");
 ?>
 <div class="container mt-3">
-    <div class="alert alert-info text-center" role="alert">
-        <strong>Library Management System:</strong> Library opens at 8:00 AM and closes at 8:00 PM
-    </div>
     
     <div class="row mt-4">
         <div class="col-lg-3 mb-3">

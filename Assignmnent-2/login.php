@@ -6,8 +6,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-
-// Prevent infinite redirects: Only redirect if the session is set
 if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] === 'admin') {
         header("Location: admin/index.php");
@@ -111,6 +109,11 @@ if(isset($_POST['login'])){
                             <a href="signup.php">Not registered yet?</a>
                         </div>
                     </form>
+                    <div class="mt-3 text-center">
+                        <small>To login as an admin, use the following credentials:</small><br>
+                        <strong>Username:</strong> admin@gmail.com <br>
+                        <strong>Password:</strong> admin@1234
+                    </div>
                 </div>
             </div>
         </div>

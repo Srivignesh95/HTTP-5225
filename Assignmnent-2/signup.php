@@ -6,8 +6,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-
-// Prevent infinite redirects: Only redirect if the session is set
 if (isset($_SESSION['role'])) {
     if ($_SESSION['role'] === 'admin') {
         header("Location: admin/index.php");
@@ -19,21 +17,18 @@ if (isset($_SESSION['role'])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Sanitize and get form input values
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = ($_POST['password']); 
     $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
     $address = mysqli_real_escape_string($conn, $_POST['address']);
 
-    // Check if email already exists
     $checkEmailQuery = "SELECT * FROM users WHERE email = '$email'";
     $checkEmailResult = mysqli_query($conn, $checkEmailQuery);
 
     if (mysqli_num_rows($checkEmailResult) > 0) {
         echo "<div class='alert alert-danger text-center'>Email is already registered!</div>";
     } else {
-        // Insert into database
         $query = "INSERT INTO users (name, email, password, mobile, address, role) 
                   VALUES ('$name', '$email', '$password', '$mobile', '$address', 'user')";
 
